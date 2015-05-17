@@ -1,22 +1,32 @@
-var synth = new AudioSynth;
+$(document).ready(function() {
+	var synth = new AudioSynth;
 
-var piano = Synth.createInstrument('piano');
+	var piano = Synth.createInstrument('piano');
 
-var keyMappings = {
-	"a": 'C',
-	"s": 'D',
-	"d": 'E',
-	"f": "F", 
-	"g": "G", 
-	"h": "A", 
-	"j": "B",
-	"_": "_"
-};
+	//map keyboard to notes on piano
+	var keyMappings = {
+		"a": 'C',
+		"s": 'D',
+		"d": 'E',
+		"f": "F", 
+		"g": "G", 
+		"h": "A", 
+		"j": "B",
+		"_": "_"
+	};
 
-$(document).keypress(function(e){
-	var key = keyMappings[String.fromCharCode(e.charCode)];
-	piano.play(key , 4, 3);
-})
+
+	//sampling song --> beginning of twinkle little star
+	var twinkle = 'CCGGAAG_FFEEDDC_GGFFEED_GGFFEED_CCGGAAG_FFEEDDC_';
+
+
+
+	$(document).keypress(function(e){
+		var key = keyMappings[String.fromCharCode(e.charCode)];
+		piano.play(key , 4, 3);
+	});
+
+
 
 Object.prototype.getKeyByValue = function( value ) {
     for( var prop in this ) {
@@ -26,21 +36,40 @@ Object.prototype.getKeyByValue = function( value ) {
         }
     }
 }
-// var twinkleBeginning = [a, a, g, g, h, h, g];
-var twinkle = "ccgg_aa_gffeeddcggffeedccgg_aa_gffeeddc";
-var convertToQWERTY = function(string) {
-	var qwertyKeys = string;
 
+var convertToQWERTY = function(string) {
+	string = string.split("");
+	var result = [];
 	for(var i = 0; i<string.length; i++) {
-		string[i] = keyMappings.getKeyByValue(string[i].toUpperCase());
+
+		result[i] = keyMappings.getKeyByValue(string[i].toUpperCase());
 	}
-	return qwertyKeys; 
+	console.log(result);
+	return result.join(""); 
 }
-console.log(convertToQWERTY(twinkle));
+console.log("hello", convertToQWERTY(twinkle));
+
+
+
+
+	//wrap each note in a span tag
+	var wrapInPTag = function(score) {
+		var scoreTextArray = score.split("");
+
+		$.each(scoreTextArray, function (index, value) {
+		$('.score').append($('<span>').text(value));
+
+ 		});
+	}
+
+
+	wrapInPTag(convertToQWERTY(twinkle));
+});
+
 
 
 var startPlaying = function() {
-	var letter = $(".notes").children()[0];
+	var letter = $(".score").children()[0];
 		$(letter).toggleClass("current");
 
 	setInterval(function(){
@@ -50,6 +79,7 @@ var startPlaying = function() {
 
 	}, 500)
 };
+
 
 
 
