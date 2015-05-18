@@ -1,6 +1,26 @@
 
+body {
+ 	background-image: url("justkeys.jpg");
+ 	background-size: 100% 100%;
+}
 
+.center {
+  position: fixed;
+	top: 30%;
+	left: 40%;
+	margin-top: -50px;
+	margin-left: -100px;
+}
 .current {
- 	background-color:#FFFF00; 
+ 	color: white;
+}
+.ui.massive.teal.submit.button {
+	margin-left: 5px;
+}
+.score {
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-size: 60px;
+}
+
 }
 

@@ -2,18 +2,53 @@
 <html>
 <head>
 	<title></title>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.12.2/semantic.min.js"></script>
 	<script src="audiosynth.js"></script>
 	<script src="qwertyPiano.js"></script>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.12.2/semantic.min.css" rel="stylesheet" type="text/css" />
+	<link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div class="score">
+
+<div class="ui grid">
+    <div class="computer tablet only row">
+        <div class="ui inverted menu navbar page grid">
+            <a href="" class="brand item">QWERTY Piano</a>
+
+            <div class="right menu">
+                <a href="" class="active item">Home</a>
+                <a href="" class="item">About</a>
+                <a href="" class="item">Contact</a>
+            </div>
+        </div>
+    </div>
+
+<div class="center">
+  <div class="ui massive dropdown teal button">Select Speed<i class="dropdown icon"></i>
+       <div class="menu">
+         <div class="item">
+           Slow
+         </div>
+         <div class="item">
+           Medium
+         </div>
+         <div class="item">
+           Fast
+         </div>
+    </div>
+ </div>
 
 
-	<!-- <span> hello </span> <span> oh yeah </span> -->
-	<!-- <p> a a g g h h g </p> -->
-
+	<div class="ui massive teal submit button">
+  	Start Playing Music!
+	</div>
 </div>
+
+<div class="score">
+</div>
+
 </body>
+<!-- 	<script> 	$('.ui.dropdown').dropdown() </script> -->
+
 </html>
