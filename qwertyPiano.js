@@ -1,25 +1,27 @@
 $(document).ready(function() {
 
-	var piano = Synth.createInstrument('piano');
+	var piano = Synth.createInstrument('acoustic');
 
 	//map keyboard to notes on piano
 	var keyMappings = {
-		"a": 'C',
-		"s": 'D',
-		"d": 'E',
-		"f": "F",
-		"g": "G",
-		"h": "A",
-		"j": "B",
-		"_": "_"
+		"a": ['C',"4"],
+		"s": ['D',"4"],
+		"d": ['E',"4"],
+		"f": ["F","4"],
+		"g": ["G","4"],
+		"h": ["A","4"],
+		"j": ["B","4"],
+		"k": ["c","5"],
+		"l": ["d","5"],
+		"_": ["_",""]
 	};
 
 	//sampling song --> beginning of twinkle little star
-	var twinkle = 'CCGGAAG_FFEEDDC_GGFFEED_GGFFEED_CCGGAAG_FFEEDDC_';
-
+	// var twinkle = 'CCGGAAG_FFEEDDC_GGFFEED_GGFFEED_CCGGAAG_FFEEDDC_';
+	var twinkle = 'CEEEDCGGFEEEDCGCEEEDCGGFEEEDCGGFEFGFEDbGCEEEDCGGFEEEDCGGFEFGFEDCGFEFGAGCGFEFGAGCaGFEDCDCGFEFGFEDDGCEEEDCGGFEEEDCGGF';
 	$(document).keypress(function(e){
 		var key = keyMappings[String.fromCharCode(e.charCode)];
-		piano.play(key , 4, 3);
+		piano.play(key[0] , key[1], 3);
 	});
 
 	Object.prototype.getKeyByValue = function( value ) {
@@ -62,6 +64,8 @@ $(document).ready(function() {
 
 });
 
+
+
 var speed = 800;
 
 var startPlaying = function() {
@@ -79,6 +83,32 @@ var startPlaying = function() {
 
 
 
+
+
+var buildOutputUsingTempo = function( tempoArray, keysArray) {
+	var result = "";
+	var currentTime = 0;
+
+
+	for(var i = 0; i< tempoArray.length; i++){
+		result += keysArray[i][0]["keyQWERTY"];
+		currentTime += 250;
+		
+		var numberOfBlanks = (tempoArray[i]-250)/250;
+
+		for(var j = 0; j < numberOfBlanks; j++) {
+			result += " ";
+		};
+	}
+	return result; 
+}
+
+/**testing for buildOutputUSingTempo**/
+var tempoArray = [1000, 250, 1000, 2000];
+var keysArray = [[{keyQWERTY: "a"}],[{keyQWERTY: "s"}], [{keyQWERTY: "d"}], [{keyQWERTY: "f"}]];
+
+console.log( buildOutputUsingTempo(tempoArray, keysArray));
+/***********/
 
 
 
