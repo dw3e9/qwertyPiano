@@ -1,0 +1,24 @@
+{
+  "name": "QWERTYpiano",
+  "version": "1.0.0",
+  "description": "Know how to type? Learn how to play cool piano tunes in 2 seconds!",
+  "main": "qwertyPiano.js",
+  "dependencies": {
+    "fs": "0.0.2",
+    "midi-converter": "^0.1.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/darrenwong23/qwertyPiano.git"
+  },
+  "author": "Darren Wong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/darrenwong23/qwertyPiano/issues"
+  },
+  "homepage": "https://github.com/darrenwong23/qwertyPiano"
+}

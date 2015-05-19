@@ -22,5 +22,8 @@ body {
 	font-size: 60px;
 }
 
+#left {
+	position:relative;
+
 }
 
