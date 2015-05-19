@@ -21,7 +21,11 @@ $(document).ready(function() {
 	var twinkle = 'CEEEDCGGFEEEDCGCEEEDCGGFEEEDCGGFEFGFEDbGCEEEDCGGFEEEDCGGFEFGFEDCGFEFGAGCGFEFGAGCaGFEDCDCGFEFGFEDDGCEEEDCGGFEEEDCGGF';
 	$(document).keypress(function(e){
 		var key = keyMappings[String.fromCharCode(e.charCode)];
+<<<<<<< HEAD
 		piano.play(key[0] , key[1], 3);
+=======
+		piano.play(key , 5, 3);
+>>>>>>> Started mapping stayWithMe
 	});
 
 	Object.prototype.getKeyByValue = function( value ) {
@@ -56,7 +60,7 @@ $(document).ready(function() {
 
 	wrapInPTag(convertToQWERTY(twinkle));
 
-	$('.ui.dropdown').dropdown();
+	// $('.ui.dropdown').dropdown();
 
 	$( ".ui.teal.submit.button" ).click(function() {
   	startPlaying();
