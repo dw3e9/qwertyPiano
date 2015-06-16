@@ -1,2 +1,2 @@
 # qwertyPiano
-Know how to type? Learn how to play cool piano tunes in 2 seconds!
+Know how to type? Play cool piano tunes in 2 seconds!

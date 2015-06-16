@@ -6,8 +6,6 @@
 
 $(document).ready(function() {
 
-
-
 	var piano = Synth.createInstrument('piano');
 
 	//map keyboard to notes on piano
@@ -32,6 +30,7 @@ $(document).ready(function() {
 	 console.log(spring.length);
 	$(document).keypress(function(e){
 		var key = keyMappings[String.fromCharCode(e.charCode)];
+
 		piano.play(key[0], key[1], 3);
 
 	});
