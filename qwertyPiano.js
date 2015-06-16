@@ -1,8 +1,8 @@
-var fs = require('fs');
-var midiConverter = require('midi-converter');
-var midiSong = fs.readFileSync('samsmith.mid', 'binary');
-var jsonSong = midiConverter.midiToJson(midiSong);
-fs.writeFileSync('example.json', JSON.stringify(jsonSong));
+// var fs = require('fs');
+// var midiConverter = require('midi-converter');
+// var midiSong = fs.readFileSync('samsmith.mid', 'binary');
+// var jsonSong = midiConverter.midiToJson(midiSong);
+// fs.writeFileSync('example.json', JSON.stringify(jsonSong));
 
 $(document).ready(function() {
 
@@ -180,6 +180,8 @@ var startPlaying = function() {
 
 	}, speed)
 };
+
+
 
 
 
