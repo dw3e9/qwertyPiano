@@ -5,7 +5,7 @@
   "main": "qwertyPiano.js",
   "dependencies": {
     "fs": "0.0.2",
-    "midi-converter": "^0.1.4"
+    "midi-converter": "0.1.4"
   },
   "devDependencies": {},
   "scripts": {
