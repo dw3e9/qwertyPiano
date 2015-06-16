@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-	var piano = Synth.createInstrument('acoustic');
+	var piano = Synth.createInstrument('piano');
 
 	//map keyboard to notes on piano
 	var keyMappings = {
@@ -21,11 +21,7 @@ $(document).ready(function() {
 	var twinkle = 'CEEEDCGGFEEEDCGCEEEDCGGFEEEDCGGFEFGFEDbGCEEEDCGGFEEEDCGGFEFGFEDCGFEFGAGCGFEFGAGCaGFEDCDCGFEFGFEDDGCEEEDCGGFEEEDCGGF';
 	$(document).keypress(function(e){
 		var key = keyMappings[String.fromCharCode(e.charCode)];
-<<<<<<< HEAD
 		piano.play(key[0] , key[1], 3);
-=======
-		piano.play(key , 5, 3);
->>>>>>> Started mapping stayWithMe
 	});
 
 	Object.prototype.getKeyByValue = function( value ) {
